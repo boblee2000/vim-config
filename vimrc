@@ -42,12 +42,13 @@ Plugin 'scrooloose/nerdtree'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
+Plugin 'Rykka/colorv.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 Plugin 'ctags.vim'
 Plugin 'tagList.vim'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+"Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
 "Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
@@ -141,6 +142,15 @@ function! HasPaste()
     return ''
 endfunction
 
+"open code autocomplete
+"omnicppcomplete
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags 
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType c set omnifunc=ccomplete#Complete
+
 """"""""""""""""""""""""""""""
 "=> cscope setting
 """"""""""""""""""""""""""""""
@@ -190,3 +200,8 @@ let g:pymode_run_bind = "<C-S-e>"
 let g:pymode_doc_bind = "<C-S-d>"
 
 let g:pymode_folding = 0 
+
+"for Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstal
+let g:user_emmet_leader_key='<C-j>'
