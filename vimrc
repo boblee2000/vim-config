@@ -35,7 +35,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-"Plugin 'klen/python-mode'
+Plugin 'klen/python-mode'
 Plugin 'scrooloose/nerdtree'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -134,6 +134,9 @@ set laststatus=2
 " Format the status line
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
+set cursorcolumn
+set cursorline
+
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
@@ -190,16 +193,18 @@ map <Down> <Nop>
 map <C-m> :NERDTreeToggle<CR>
 
 "for python-mode
+let g:pymode = 0
 " Override go-to.definition key shortcut to Ctrl-]
-"let g:pymode_rope_goto_definition_bind = "<C-]>"
+let g:pymode_rope_goto_definition_bind = "<C-]>"
 "
 " " Override run current python file key shortcut to Ctrl-Shift-e
 "let g:pymode_run_bind = "<C-S-e>"
 "
 " " Override view python doc key shortcut to Ctrl-Shift-d
-"let g:pymode_doc_bind = "<C-S-d>"
+let g:pymode_doc_bind = "<C-S-d>"
+let g:pymode_indent = 1
 
-"let g:pymode_folding = 0 
+"let g:pymode_folding = 1
 
 "for Emmet
 let g:user_emmet_install_global = 0
