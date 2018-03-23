@@ -45,6 +45,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'Rykka/colorv.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
+Plugin 'tell-k/vim-autopep8'
 Plugin 'ctags.vim'
 Plugin 'tagList.vim'
 " Git plugin not hosted on GitHub
