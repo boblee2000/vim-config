@@ -239,5 +239,3 @@ function! ToggleErrors()
     endif
 endfunction
 nnoremap <Leader>s :call ToggleErrors()<cr>
-" nnoremap <Leader>sn :lnext<cr>
-" nnoremap <Leader>sp :lprevious<cr>
